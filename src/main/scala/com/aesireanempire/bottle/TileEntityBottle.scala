@@ -13,6 +13,7 @@ class TileEntityBottle extends TileEntity {
     def placeItemInBottle(stack: ItemStack): Boolean = {
         if (itemInBottle == null && stack != null) {
             itemInBottle = stack.copy()
+            itemInBottle.stackSize = 1
             true
         } else {
             false

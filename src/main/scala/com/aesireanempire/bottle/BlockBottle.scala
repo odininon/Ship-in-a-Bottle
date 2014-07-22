@@ -50,7 +50,7 @@ object BlockBottle extends BlockContainer(Material.glass) {
                         }
                     } else {
                         if (te.placeItemInBottle(player.getCurrentEquippedItem)) {
-                            player.destroyCurrentEquippedItem()
+                            player.getCurrentEquippedItem.stackSize = player.getCurrentEquippedItem.stackSize - 1
                             world.markBlockForUpdate(x, y, z)
                             true
                         }
